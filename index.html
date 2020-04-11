@@ -1,0 +1,87 @@
+<!DOCTYPE html>>
+<html>
+    <head>
+        <title>rock-paper-scissors</title>.
+    </head>
+    <body>
+    <script>
+
+        
+       function player(){
+        let playerChoice = prompt("enter your choice"); 
+        return playerChoice;
+       }
+        
+       
+       
+        function computerPlay(){
+            let choice;
+           
+            let random = Math.floor(Math.random() * 3)
+
+            if(random === 0){
+                choice = "rock"
+            }
+            else if(random === 1){
+                choice = "paper"
+            }
+            else if(random === 2){
+                choice = "scissors"
+            }
+
+            return choice;
+           
+            
+
+        }
+        function playRound(playerSelection, computerSelection){
+           
+
+            let output = "";
+            if(playerSelection === "rock" && computerSelection == "scissors" ){
+                output = "You Win, rock beats scissors"
+            }
+           else if(playerSelection === "paper" && computerSelection == "scissors" ){
+                output = "You lose, scissors beats papers"
+            }
+           else if(playerSelection === "scissors" && computerSelection == "scissors" ){
+                output = "You tie!"
+            }
+           else if(playerSelection === "paper" && computerSelection == "paper" ){
+                output = "You tie!"
+            }
+           else if(playerSelection === "rock" && computerSelection == "rock" ){
+                output = "You tie"
+            }
+            else if(playerSelection === "scissors" && computerSelection == "paper" ){
+                output = "You Win"
+            }
+            else if(playerSelection === "paper" && computerSelection == "rock" ){
+                output = "You Win"
+            }
+           else if(playerSelection === "scissors" && computerSelection == "rock" ){
+                output = "You Lose"
+            }
+           else if(playerSelection === "rock" && computerSelection == "paper" ){
+                output = "You lose"
+            }
+
+            return output;
+
+
+        }
+
+       
+
+        function game(){
+
+            for(i = 0; i < 5; i++){
+               console.log(playRound(player(),computerPlay()));
+            }
+        }
+
+        game();
+
+    </script>
+    </body>
+</html>
